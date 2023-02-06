@@ -24,9 +24,11 @@
 # - Generate the models and migration files to match the domain model from hw1.
 #   Table and columns should match the domain model. Execute the migration
 #   files to create the tables in the database. (5 points)
+
 # - Insert the "Batman" sample data using ruby code. Do not use hard-coded ids.
 #   Delete any existing data beforehand so that each run of this script does not
 #   create duplicate data. (5 points)
+
 # - Query the data and loop through the results to display output similar to the
 #   sample "report" below. (10 points)
 
@@ -70,6 +72,10 @@
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
 # TODO!
+studio.destroy_all
+movie.destroy_all
+actor.destroy_all
+role.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
@@ -77,6 +83,11 @@
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+
+
+
+
 
 # Prints a header for the movies output
 puts "Movies"
@@ -94,3 +105,22 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+
+# NOTES
+# A model is a class dedicated to representing a table in the database
+# the model name is singular
+# the table name is plural
+
+# Migrations = creating tables in Ruby
+# generate the model and database migration files: 'rails generate model Thing'
+
+rails generate model Studio
+rails generate model Movie
+rails generate model Actor
+rails generate model Role
+
+# execute the migration file: 'rails db:migrate'
+
+
+# Associations = relationships between models
